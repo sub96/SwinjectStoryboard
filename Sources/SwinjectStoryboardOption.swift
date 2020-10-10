@@ -13,6 +13,10 @@ internal struct SwinjectStoryboardOption: ServiceKeyOption {
 
     internal let controllerType: String
     
+    func hash(into: inout Hasher) {
+        controllerType.hash(into: &into)
+    }
+    
     internal init(controllerType: Container.Controller.Type) {
         self.controllerType = String(reflecting: controllerType)
     }
